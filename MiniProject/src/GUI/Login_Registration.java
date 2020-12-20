@@ -74,6 +74,8 @@ public class Login_Registration {
 		JButton btnNewButton = new JButton("REGISTER");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				int flag = 0;
 				         lblNewLabel_4.setVisible(false);
 				  try {  lblNewLabel_1_1_1.setVisible(false);
 					     String adminpassword = "Sachintendulkar10";
@@ -106,7 +108,8 @@ public class Login_Registration {
 								    con.close();
 						          }
 						          else{
-						         
+						        	  flag = 1;
+						        	  lblNewLabel_4.setVisible(false);
 						        	  lblNewLabel_3.setVisible(true);
 						              }
 						    }
@@ -121,7 +124,8 @@ public class Login_Registration {
 								st.close();
 						    	con.close();
 						         }
-						    lblNewLabel_4.setVisible(true);
+						  if (flag == 0)  
+						  { lblNewLabel_4.setVisible(true);}
 						}
 						
 			      catch(Exception e1)
@@ -201,7 +205,7 @@ public class Login_Registration {
 		lblNewLabel_2.setBounds(169, 193, 291, 14);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Only letters numbers or underscore are allowed.");
+		JLabel lblNewLabel_2_1 = new JLabel("Only  numbers are allowed.");
 		lblNewLabel_2_1.setForeground(Color.BLUE);
 		lblNewLabel_2_1.setBounds(169, 255, 291, 14);
 		frame.getContentPane().add(lblNewLabel_2_1);
